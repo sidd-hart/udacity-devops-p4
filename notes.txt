@@ -6,4 +6,5 @@
 
 4. my_password.txt -- this file contains the docker hub password, and will be put in gitignore to avoid password from being exposed
 
-5. Makefile -- (line 29) -- changed the line to "pylint --disable=R,C,W1203,W1202 app.py", this helped to get it passed in circleci
+5. Makefile -- (line 29) -- changed the line to "pylint --disable=R,C,W1203,W1202 app.py", this helped to get it passed in circleci, also add "pip install pylint"
+
