@@ -1,0 +1,9 @@
+1. Make file indentation error -- (line 16) -- pip install -r requirements.txt
+
+2. app.py file lint error -- (line 23) -- Using an f-string that does not have any interpolated variables
+
+3. make_prediction.sh -- (line 3) -- Wrong port number 8000, changed it to 80
+
+4. my_password.txt -- this file contains the docker hub password, and will be put in gitignore to avoid password from being exposed
+
+5. 
