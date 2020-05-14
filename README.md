@@ -1,5 +1,4 @@
 [![sidd-hart](https://circleci.com/gh/sidd-hart/udacity-devops-p4.svg?style=svg)](https://github.com/sidd-hart/udacity-devops-p4.git)
-<include a CircleCI status badge, here>
 
 ## Project Overview
 
@@ -29,11 +28,21 @@ You can find a detailed [project rubric, here](https://review.udacity.com/#!/rub
 * Create a virtualenv and activate it
 * Run `make install` to install the necessary dependencies
 
-### Running `app.py`
+### Running `app.py` application file
 
 1. Standalone:  `python app.py`
 2. Run in Docker:  `./run_docker.sh`
 3. Run in Kubernetes:  `./run_kubernetes.sh`
+
+The application will run on localhost on port 80 -- http://localhost:8000
+
+### Predict housing prices 
+
+Run `./make_prediction.sh` when the app is deployed and running. This script will send the independent variable to the app and get the predicted output.
+
+### Upload Docker image to Hub
+
+Use the `./upload_docker.sh` to upload the docker image <b>udacity_devops:version1</b> to the DockerHub. The username is stored in $DOCKER_USER environment variable, and the password is saved in a seperate file local my_password.   
 
 ### Kubernetes Steps
 
@@ -41,3 +50,20 @@ You can find a detailed [project rubric, here](https://review.udacity.com/#!/rub
 * Setup and Configure Kubernetes locally
 * Create Flask app in Container
 * Run via kubectl
+
+## Project Files and Folders
+
+* __notes.txt__: This files maintains all the changes made in the original project files 
+* __requirements.txt:__ This file is use by the pip installer to recreate the application environment 
+* __model_data/boston_housing_prediction.joblib:__ The scikit-learn model data
+* __app.py:__ Flask application file for the API. Runs the server on port 80
+* __output_txt_files:__ This folder contains the output data files.
+* __output_txt_files/docker_out.txt:__ Console output from running run_docker.sh and make_prediction.sh
+* __output_txt_files/kubernetes_out.txt__ Console output from running run_kubernetes.sh and make_prediction.sh
+* __Dockerfile:__ File to create and run the docker image to run the API
+* __Makefile:__ File to use the make commands to install, setip, lint, etc
+* __run_docker.sh:__ Contains commands to the docker container 
+* __upload_docker.sh:__ This file contains steps to communicate with DockerHub and pudh the docker image
+* __run_kubernetes.sh:__ Commands to create the kubernetes pod, and port-forward the API to port 8000
+* __make_prediction.sh:__ This file forwards the relevant prediction input data and gets the predicted output from the API 
+* __.circleci/config.yml:__ This folder is neede as per requirements of CircleCI, and should contain the config.yml file 
