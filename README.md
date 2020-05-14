@@ -1,3 +1,4 @@
+[![sidd-hart](https://circleci.com/gh/sidd-hart/udacity-devops-p4.svg?style=svg)](https://github.com/sidd-hart/udacity-devops-p4.git)
 <include a CircleCI status badge, here>
 
 ## Project Overview
